@@ -1,0 +1,14 @@
+.transfer-filter {
+  border-radius: 5px;
+  width: 232px;
+  height: 252px;
+  padding: 20px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  &__header {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+}
