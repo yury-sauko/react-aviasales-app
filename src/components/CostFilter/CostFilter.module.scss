@@ -6,6 +6,8 @@
   &__item {
     $this: &;
     display: inline-block;
+    padding: 0;
+    background-color: #fff;
     width: calc(100% / 3);
     font-size: 12px;
     line-height: 50px;
@@ -24,12 +26,19 @@
     &:last-child {
       border-radius: 0 6px 6px 0;
     }
-    &:hover,
+    &:hover {
+      background-color: #71b3e8;
+      border-color: #71b3e8;
+      color: #fff;
+      cursor: pointer;
+    }
+    &:focus,
     &:active {
       background-color: #2196f3;
       border-color: #2196f3;
       color: #fff;
       cursor: pointer;
+      outline: none;
     }
     &:nth-child(2):hover + #{$this}:last-child {
       border-left: 1px solid #2196f3;
