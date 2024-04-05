@@ -1,0 +1,40 @@
+.show-tickets-btn {
+  width: 502px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196f3;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.67;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  grid-area: show-tickets-btn;
+  &:hover {
+    background-color: #71b3e8;
+    border-color: #71b3e8;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  &:focus,
+  &:active {
+    background-color: #71b3e8;
+    border-color: #71b3e8;
+    cursor: pointer;
+    outline: 2px solid #800000;
+  }
+
+  @media (max-width: 991px) {
+    width: 475px;
+  }
+
+  @media (max-width: 767px) {
+    width: 400px;
+  }
+
+  @media (max-width: 575px) {
+    width: 340px;
+  }
+}

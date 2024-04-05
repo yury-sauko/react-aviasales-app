@@ -3,8 +3,8 @@ import mainLogo from '../../img/main-logo.svg';
 
 export default function MainLogo() {
   return (
-    <div className={classes['main-logo']}>
-      <img src={mainLogo} alt="Main logo" />
+    <div className={classes['main-logo-container']}>
+      <img src={mainLogo} className={classes['main-logo-img']} alt="Main logo" />
     </div>
   );
 }

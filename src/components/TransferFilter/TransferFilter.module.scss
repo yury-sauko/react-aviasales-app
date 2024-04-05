@@ -1,63 +1,114 @@
 .transfer-filter {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   border-radius: 5px;
   width: 232px;
   height: 252px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   background: #fff;
+  color: #4a4a4a;
+  grid-area: tr-filter;
+
+  @media (max-width: 767px) {
+    width: 400px;
+    height: 164px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-rows: 24px repeat(3, 40px);
+    grid-template-columns: 180px 180px;
+    grid-template-areas:
+      'tr-filter-header tr-filter-header'
+      'tr-filter-all tr-filter-1'
+      'tr-filter-zero tr-filter-2'
+      '. tr-filter-3';
+  }
+
+  @media (max-width: 575px) {
+    width: 340px;
+    padding: 10px;
+    grid-template-columns: 150px 150px;
+  }
+
   &__header {
     padding: 20px 20px 10px;
     font-size: 12px;
-    line-height: 100%;
+    line-height: 1;
     font-weight: 600;
     text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      padding: 0;
+      line-height: 2;
+      text-align: center;
+      grid-area: tr-filter-header;
+    }
   }
   &__input-wrapper {
-    position: relative;
     height: 40px;
     padding: 0 20px;
     display: flex;
     justify-content: start;
     align-items: center;
+
+    @media (max-width: 767px) {
+      // первый элемент списка - header,
+      // поэтому нумерация со 2-го
+      &:nth-child(2) {
+        grid-area: tr-filter-all;
+      }
+      &:nth-child(3) {
+        grid-area: tr-filter-zero;
+      }
+      &:nth-child(4) {
+        grid-area: tr-filter-1;
+      }
+      &:nth-child(5) {
+        grid-area: tr-filter-2;
+      }
+      &:nth-child(6) {
+        grid-area: tr-filter-3;
+      }
+    }
+
     &:hover {
       background: #f1fcff;
     }
   }
-  &__default-input {
-    display: none;
-  }
-  &__custom-input {
-    display: inline-block;
+  &__input {
     position: relative;
-    box-sizing: border-box;
+    appearance: none;
     width: 20px;
     height: 20px;
     border: 2px solid #9abbce;
     border-radius: 2px;
+    &:checked {
+      border-color: #2196f3;
+      outline: none;
+    }
+    &:checked::before {
+      content: '\2714';
+      position: absolute;
+      top: -3px;
+      left: 2px;
+      font-size: 16px;
+      color: #2196f3;
+    }
     &:focus {
       outline: 2px solid #00cccc;
       outline-offset: 3px;
     }
   }
-  [aria-checked='true'] {
-    border-color: #2196f3;
-  }
-  [aria-checked='true']::before {
-    content: '\2714';
-    position: absolute;
-    top: -3px;
-    left: 2px;
-    font-size: 16px;
-    color: #2196f3;
-  }
   &__label {
     height: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
   }
   &__label-text {
-    position: absolute;
-    top: 10px;
-    left: 50px;
     font-weight: 400;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 1;
   }
 }

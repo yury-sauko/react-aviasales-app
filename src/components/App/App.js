@@ -1,8 +1,8 @@
 import MainLogo from '../MainLogo/MainLogo';
 import TransferFilter from '../TransferFilter/TransferFilter';
 import CostFilter from '../CostFilter/CostFilter';
-// import TicketsList from '../TicketsList/TicketsList';
-// import ShowTicketsBtn from '../ShowTicketsBtn/ShowTicketsBtn';
+import TicketsList from '../TicketsList/TicketsList';
+import ShowTicketsBtn from '../ShowTicketsBtn/ShowTicketsBtn';
 import classes from './App.module.scss';
 
 export default function App() {
@@ -11,8 +11,8 @@ export default function App() {
       <MainLogo />
       <TransferFilter />
       <CostFilter />
-      {/* <TicketsList />
-      <ShowTicketsBtn /> */}
+      <TicketsList />
+      <ShowTicketsBtn />
     </div>
   );
 }

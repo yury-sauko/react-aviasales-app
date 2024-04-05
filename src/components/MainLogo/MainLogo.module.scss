@@ -1,0 +1,12 @@
+.main-logo-container {
+  width: 60px;
+  height: 60px;
+  grid-area: main-logo;
+}
+
+.main-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

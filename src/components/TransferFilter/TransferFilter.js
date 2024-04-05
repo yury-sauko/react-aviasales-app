@@ -11,98 +11,82 @@ export default function TransferFilter() {
   });
 
   const handleInputEvent = (e) => {
-    const chkBoxTarget = e.target.getAttribute('aria-label');
-    if (e.button === 0 || e.key === ' ') {
-      setChkBoxStatus((prevState) => ({
-        ...prevState,
-        [chkBoxTarget]: !prevState[chkBoxTarget],
-      }));
-    }
+    const chkBoxTarget = e.target.name;
+
+    setChkBoxStatus((prevState) => ({
+      ...prevState,
+      [chkBoxTarget]: !prevState[chkBoxTarget],
+    }));
   };
 
   return (
-    <div className={classes['transfer-filter']}>
-      <div className={classes['transfer-filter__header']}>Количество пересадок</div>
-      <div className={classes['transfer-filter__input-wrapper']}>
+    <ul className={classes['transfer-filter']}>
+      <li className={classes['transfer-filter__header']}>Количество пересадок</li>
+      <li className={classes['transfer-filter__input-wrapper']}>
         <label htmlFor="all_transfers_input" className={classes['transfer-filter__label']}>
-          <input className={classes['transfer-filter__default-input']} id="all_transfers_input" />
-          <span
-            className={classes['transfer-filter__custom-input']}
-            role="checkbox"
-            aria-checked={chkBoxStatus.chkBoxStAll}
-            aria-labelledby="all_transfers_input"
-            aria-label="chkBoxStAll"
-            tabIndex="0"
-            onClick={handleInputEvent}
-            onKeyDown={handleInputEvent}
+          <input
+            type="checkbox"
+            id="all_transfers_input"
+            name="chkBoxStAll"
+            className={classes['transfer-filter__input']}
+            checked={chkBoxStatus.chkBoxStAll}
+            onChange={handleInputEvent}
           />
           <span className={classes['transfer-filter__label-text']}>Все</span>
         </label>
-      </div>
-      <div className={classes['transfer-filter__input-wrapper']}>
+      </li>
+      <li className={classes['transfer-filter__input-wrapper']}>
         <label htmlFor="zero_transfers_input" className={classes['transfer-filter__label']}>
-          <input className={classes['transfer-filter__default-input']} id="zero_transfers_input" />
-          <span
-            className={classes['transfer-filter__custom-input']}
-            role="checkbox"
-            aria-checked={chkBoxStatus.chkBoxSt0Tr}
-            aria-labelledby="zero_transfers_input"
-            aria-label="chkBoxSt0Tr"
-            tabIndex="0"
-            onClick={handleInputEvent}
-            onKeyDown={handleInputEvent}
+          <input
+            type="checkbox"
+            id="zero_transfers_input"
+            name="chkBoxSt0Tr"
+            className={classes['transfer-filter__input']}
+            checked={chkBoxStatus.chkBoxSt0Tr}
+            onChange={handleInputEvent}
           />
           <span className={classes['transfer-filter__label-text']}>Без пересадок</span>
         </label>
-      </div>
-      <div className={classes['transfer-filter__input-wrapper']}>
+      </li>
+      <li className={classes['transfer-filter__input-wrapper']}>
         <label htmlFor="one_transfers_input" className={classes['transfer-filter__label']}>
-          <input className={classes['transfer-filter__default-input']} id="one_transfers_input" />
-          <span
-            className={classes['transfer-filter__custom-input']}
-            role="checkbox"
-            aria-checked={chkBoxStatus.chkBoxSt1Tr}
-            aria-labelledby="one_transfers_input"
-            aria-label="chkBoxSt1Tr"
-            tabIndex="0"
-            onClick={handleInputEvent}
-            onKeyDown={handleInputEvent}
+          <input
+            type="checkbox"
+            id="one_transfers_input"
+            name="chkBoxSt1Tr"
+            className={classes['transfer-filter__input']}
+            checked={chkBoxStatus.chkBoxSt1Tr}
+            onChange={handleInputEvent}
           />
           <span className={classes['transfer-filter__label-text']}>1 пересадка</span>
         </label>
-      </div>
-      <div className={classes['transfer-filter__input-wrapper']}>
+      </li>
+      <li className={classes['transfer-filter__input-wrapper']}>
         <label htmlFor="two_transfers_input" className={classes['transfer-filter__label']}>
-          <input className={classes['transfer-filter__default-input']} id="two_transfers_input" />
-          <span
-            className={classes['transfer-filter__custom-input']}
-            role="checkbox"
-            aria-checked={chkBoxStatus.chkBoxSt2Tr}
-            aria-labelledby="two_transfers_input"
-            aria-label="chkBoxSt2Tr"
-            tabIndex="0"
-            onClick={handleInputEvent}
-            onKeyDown={handleInputEvent}
+          <input
+            type="checkbox"
+            id="two_transfers_input"
+            name="chkBoxSt2Tr"
+            className={classes['transfer-filter__input']}
+            checked={chkBoxStatus.chkBoxSt2Tr}
+            onChange={handleInputEvent}
           />
           <span className={classes['transfer-filter__label-text']}>2 пересадки</span>
         </label>
-      </div>
-      <div className={classes['transfer-filter__input-wrapper']}>
+      </li>
+      <li className={classes['transfer-filter__input-wrapper']}>
         <label htmlFor="three_transfers_input" className={classes['transfer-filter__label']}>
-          <input className={classes['transfer-filter__default-input']} id="three_transfers_input" />
-          <span
-            className={classes['transfer-filter__custom-input']}
-            role="checkbox"
-            aria-checked={chkBoxStatus.chkBoxSt3Tr}
-            aria-labelledby="three_transfers_input"
-            aria-label="chkBoxSt3Tr"
-            tabIndex="0"
-            onClick={handleInputEvent}
-            onKeyDown={handleInputEvent}
+          <input
+            type="checkbox"
+            id="three_transfers_input"
+            name="chkBoxSt3Tr"
+            className={classes['transfer-filter__input']}
+            checked={chkBoxStatus.chkBoxSt3Tr}
+            onChange={handleInputEvent}
           />
           <span className={classes['transfer-filter__label-text']}>3 пересадки</span>
         </label>
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }
