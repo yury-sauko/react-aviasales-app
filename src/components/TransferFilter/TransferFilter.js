@@ -1,23 +1,20 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'; // хуки для работы с redux
+import {
+  changeInputAll,
+  changeInput0Tr,
+  changeInput1Tr,
+  changeInput2Tr,
+  changeInput3Tr,
+} from '../../slices/transferFilter.slice'; // импортируем редьюсеры
 import classes from './TransferFilter.module.scss';
 
 export default function TransferFilter() {
-  const [chkBoxStatus, setChkBoxStatus] = useState({
-    chkBoxStAll: false,
-    chkBoxSt0Tr: false,
-    chkBoxSt1Tr: false,
-    chkBoxSt2Tr: false,
-    chkBoxSt3Tr: false,
-  });
+  // Вытаскиваем данные из хранилища. Здесь state — это все состояние приложения
+  const { isChkdInputAll, isChkdInput0Tr, isChkdInput1Tr, isChkdInput2Tr, isChkdInput3Tr } =
+    useSelector((state) => state.transferFilter);
 
-  const handleInputEvent = (e) => {
-    const chkBoxTarget = e.target.name;
-
-    setChkBoxStatus((prevState) => ({
-      ...prevState,
-      [chkBoxTarget]: !prevState[chkBoxTarget],
-    }));
-  };
+  // Возвращаем метод store.dispatch() текущего хранилища
+  const dispatch = useDispatch();
 
   return (
     <ul className={classes['transfer-filter']}>
@@ -27,10 +24,10 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="all_transfers_input"
-            name="chkBoxStAll"
+            // name="inputAll"
             className={classes['transfer-filter__input']}
-            checked={chkBoxStatus.chkBoxStAll}
-            onChange={handleInputEvent}
+            checked={isChkdInputAll}
+            onChange={() => dispatch(changeInputAll())}
           />
           <span className={classes['transfer-filter__label-text']}>Все</span>
         </label>
@@ -40,10 +37,10 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="zero_transfers_input"
-            name="chkBoxSt0Tr"
+            // name="input0Tr"
             className={classes['transfer-filter__input']}
-            checked={chkBoxStatus.chkBoxSt0Tr}
-            onChange={handleInputEvent}
+            checked={isChkdInput0Tr}
+            onChange={() => dispatch(changeInput0Tr())}
           />
           <span className={classes['transfer-filter__label-text']}>Без пересадок</span>
         </label>
@@ -53,10 +50,10 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="one_transfers_input"
-            name="chkBoxSt1Tr"
+            // name="input1Tr"
             className={classes['transfer-filter__input']}
-            checked={chkBoxStatus.chkBoxSt1Tr}
-            onChange={handleInputEvent}
+            checked={isChkdInput1Tr}
+            onChange={() => dispatch(changeInput1Tr())}
           />
           <span className={classes['transfer-filter__label-text']}>1 пересадка</span>
         </label>
@@ -66,10 +63,10 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="two_transfers_input"
-            name="chkBoxSt2Tr"
+            // name="input2Tr"
             className={classes['transfer-filter__input']}
-            checked={chkBoxStatus.chkBoxSt2Tr}
-            onChange={handleInputEvent}
+            checked={isChkdInput2Tr}
+            onChange={() => dispatch(changeInput2Tr())}
           />
           <span className={classes['transfer-filter__label-text']}>2 пересадки</span>
         </label>
@@ -79,10 +76,10 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="three_transfers_input"
-            name="chkBoxSt3Tr"
+            // name="input3Tr"
             className={classes['transfer-filter__input']}
-            checked={chkBoxStatus.chkBoxSt3Tr}
-            onChange={handleInputEvent}
+            checked={isChkdInput3Tr}
+            onChange={() => dispatch(changeInput3Tr())}
           />
           <span className={classes['transfer-filter__label-text']}>3 пересадки</span>
         </label>

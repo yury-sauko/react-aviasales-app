@@ -38,6 +38,14 @@
     "no-nested-ternary": "off",
     "no-underscore-dangle": "off"
   },
+  "overrides": [
+    {
+      "files": ["src/slices/*.slice.js"],
+      "rules": {
+        "no-param-reassign": ["error", { "props": false }]
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"
