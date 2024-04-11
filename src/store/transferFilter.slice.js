@@ -8,6 +8,11 @@ const initialState = {
   isChkdInput3Tr: false,
 };
 
+/**
+ * Убрать из редьюсеров логику проверки чекбокса "Все",
+ * использовать для этого мидлвару???
+ */
+
 // Вспомогательная функция для изменения чекбоксов по клику на "Все"
 const changeAllInputs = (state) =>
   Object.fromEntries(
@@ -93,7 +98,8 @@ const transferFilterSlice = createSlice({
 export const { changeInputAll, changeInput0Tr, changeInput1Tr, changeInput2Tr, changeInput3Tr } =
   transferFilterSlice.actions;
 
-/** По умолчанию экспортируется редьюсер, сгенерированный слайсом. Экспортируется
+/**
+ * По умолчанию экспортируется редьюсер, сгенерированный слайсом. Экспортируется
  * по умолчанию просто для удобства, чтобы разграничить экспорт экшенов и редьюсера
- * */
+ */
 export default transferFilterSlice.reducer;

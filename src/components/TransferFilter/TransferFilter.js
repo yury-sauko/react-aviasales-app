@@ -5,7 +5,7 @@ import {
   changeInput1Tr,
   changeInput2Tr,
   changeInput3Tr,
-} from '../../slices/transferFilter.slice'; // импортируем редьюсеры
+} from '../../store/transferFilter.slice'; // импортируем редьюсеры
 import classes from './TransferFilter.module.scss';
 
 export default function TransferFilter() {

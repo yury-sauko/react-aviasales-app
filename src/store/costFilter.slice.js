@@ -16,13 +16,19 @@ const costFilterSlice = createSlice({
      * Добавил переопределение правила в .eslintrc.json (см. "overrides")
      * */
     changeFocusCheapestBtn: (state) => {
-      state.isFocusCheapestBtn = !state.isFocusCheapestBtn;
+      state.isFocusCheapestBtn = true;
+      state.isFocusFastestBtn = false;
+      state.isFocusOptimalBtn = false;
     },
     changeFocusFastestBtn: (state) => {
-      state.isFocusFastestBtn = !state.isFocusFastestBtn;
+      state.isFocusCheapestBtn = false;
+      state.isFocusFastestBtn = true;
+      state.isFocusOptimalBtn = false;
     },
     changeFocusOptimalBtn: (state) => {
-      state.isFocusOptimalBtn = !state.isFocusOptimalBtn;
+      state.isFocusCheapestBtn = false;
+      state.isFocusFastestBtn = false;
+      state.isFocusOptimalBtn = true;
     },
   },
 });

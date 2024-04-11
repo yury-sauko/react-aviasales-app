@@ -40,7 +40,7 @@
   },
   "overrides": [
     {
-      "files": ["src/slices/*.slice.js"],
+      "files": ["src/store/*.slice.js"],
       "rules": {
         "no-param-reassign": ["error", { "props": false }]
       }
