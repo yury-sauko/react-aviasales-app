@@ -14,7 +14,7 @@ import TransferFilter from '../TransferFilter/TransferFilter';
 import CostFilter from '../CostFilter/CostFilter';
 import TicketsContainer from '../TicketsContainer/TicketsContainer';
 
-import classes from './App.module.scss';
+import classes from './app.module.scss';
 
 export default function App() {
   const { searchIdValue } = useSelector((state) => state.searchId);
