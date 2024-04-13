@@ -7,8 +7,11 @@
   background-color: #fff;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
   list-style-type: none;
-  &:last-child {
-    margin-bottom: 0;
+
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 0 2px 8px 0 rgba(113, 179, 232, 0.75);
+    transition: all 0.2s linear;
   }
 
   @media (max-width: 991px) {

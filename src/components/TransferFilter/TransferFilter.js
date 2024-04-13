@@ -1,19 +1,18 @@
-import { useSelector, useDispatch } from 'react-redux'; // хуки для работы с redux
+import { useSelector, useDispatch } from 'react-redux';
 import {
-  changeInputAll,
+  changeInputAllTr,
   changeInput0Tr,
   changeInput1Tr,
   changeInput2Tr,
   changeInput3Tr,
-} from '../../store/transferFilter.slice'; // импортируем редьюсеры
+} from '../../store/transferFilter.slice';
+
 import classes from './TransferFilter.module.scss';
 
 export default function TransferFilter() {
-  // Вытаскиваем данные из хранилища. Здесь state — это все состояние приложения
   const { isChkdInputAll, isChkdInput0Tr, isChkdInput1Tr, isChkdInput2Tr, isChkdInput3Tr } =
     useSelector((state) => state.transferFilter);
 
-  // Возвращаем метод store.dispatch() текущего хранилища
   const dispatch = useDispatch();
 
   return (
@@ -24,10 +23,9 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="all_transfers_input"
-            // name="inputAll"
             className={classes['transfer-filter__input']}
             checked={isChkdInputAll}
-            onChange={() => dispatch(changeInputAll())}
+            onChange={() => dispatch(changeInputAllTr())}
           />
           <span className={classes['transfer-filter__label-text']}>Все</span>
         </label>
@@ -37,7 +35,6 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="zero_transfers_input"
-            // name="input0Tr"
             className={classes['transfer-filter__input']}
             checked={isChkdInput0Tr}
             onChange={() => dispatch(changeInput0Tr())}
@@ -50,7 +47,6 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="one_transfers_input"
-            // name="input1Tr"
             className={classes['transfer-filter__input']}
             checked={isChkdInput1Tr}
             onChange={() => dispatch(changeInput1Tr())}
@@ -63,7 +59,6 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="two_transfers_input"
-            // name="input2Tr"
             className={classes['transfer-filter__input']}
             checked={isChkdInput2Tr}
             onChange={() => dispatch(changeInput2Tr())}
@@ -76,7 +71,6 @@ export default function TransferFilter() {
           <input
             type="checkbox"
             id="three_transfers_input"
-            // name="input3Tr"
             className={classes['transfer-filter__input']}
             checked={isChkdInput3Tr}
             onChange={() => dispatch(changeInput3Tr())}

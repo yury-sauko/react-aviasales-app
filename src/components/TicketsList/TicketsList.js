@@ -1,11 +1,13 @@
 import { useSelector } from 'react-redux';
+
 import TicketCard from '../TicketCard/TicketCard';
-import ShowTicketsBtn from '../ShowTicketsBtn/ShowTicketsBtn';
+
 import classes from './TicketsList.module.scss';
 
 export default function TicketsList() {
-  const { ticketsArr, ticketsForRender } = useSelector((state) => state.tickets);
-  const mappedTicketsArr = ticketsArr
+  const { sortedTicketsArr, ticketsForRender } = useSelector((state) => state.tickets);
+
+  const mappedTicketsArr = sortedTicketsArr
     .slice(0, ticketsForRender)
     .map((ticket) => (
       <TicketCard
@@ -17,10 +19,5 @@ export default function TicketsList() {
       />
     ));
 
-  return (
-    <ul className={classes['tickets-list']}>
-      {mappedTicketsArr}
-      <ShowTicketsBtn />
-    </ul>
-  );
+  return <ul className={classes['tickets-list']}>{mappedTicketsArr}</ul>;
 }

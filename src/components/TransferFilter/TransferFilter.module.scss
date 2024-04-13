@@ -19,9 +19,9 @@
     grid-template-columns: 180px 180px;
     grid-template-areas:
       'tr-filter-header tr-filter-header'
-      'tr-filter-all tr-filter-1'
-      'tr-filter-zero tr-filter-2'
-      '. tr-filter-3';
+      'tr-filter-all    tr-filter-1'
+      'tr-filter-zero   tr-filter-2'
+      '.                tr-filter-3';
   }
 
   @media (max-width: 575px) {

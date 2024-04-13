@@ -1,17 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isChkdInputAll: false,
-  isChkdInput0Tr: false,
-  isChkdInput1Tr: false,
-  isChkdInput2Tr: false,
-  isChkdInput3Tr: false,
+  isChkdInputAll: true,
+  isChkdInput0Tr: true,
+  isChkdInput1Tr: true,
+  isChkdInput2Tr: true,
+  isChkdInput3Tr: true,
 };
-
-/**
- * Убрать из редьюсеров логику проверки чекбокса "Все",
- * использовать для этого мидлвару???
- */
 
 // Вспомогательная функция для изменения чекбоксов по клику на "Все"
 const changeAllInputs = (state) =>
@@ -72,7 +67,7 @@ const transferFilterSlice = createSlice({
      * "под капотом" работает библиотека Immer для обеспечения иммутабельности.
      * Добавил переопределение правила в .eslintrc.json (см. "overrides")
      * */
-    changeInputAll: (state) => changeAllInputs(state),
+    changeInputAllTr: (state) => changeAllInputs(state),
     changeInput0Tr: (state) => {
       state.isChkdInput0Tr = !state.isChkdInput0Tr;
       state.isChkdInputAll = checkStatusInputAll('isChkdInput0Tr', state);
@@ -95,7 +90,7 @@ const transferFilterSlice = createSlice({
 /** Слайс генерирует экшены, которые экспортируются отдельно.
  * Экшены генерируются автоматически из имен ключей объекта reducers в createSlice
  * */
-export const { changeInputAll, changeInput0Tr, changeInput1Tr, changeInput2Tr, changeInput3Tr } =
+export const { changeInputAllTr, changeInput0Tr, changeInput1Tr, changeInput2Tr, changeInput3Tr } =
   transferFilterSlice.actions;
 
 /**

@@ -1,5 +1,7 @@
 import { addMinutes } from 'date-fns';
+
 import PropTypes from 'prop-types';
+
 import classes from './TicketCard.module.scss';
 
 export default function TicketCard({ price, carrier, segmentTo, segmentFrom }) {

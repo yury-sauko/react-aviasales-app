@@ -4,7 +4,6 @@ import costFilterReducer from './costFilter.slice';
 import searchIdReducer from './searchId.slice';
 import ticketsReducer from './tickets.slice';
 
-// настроим и экспортируем Store
 export default configureStore({
   reducer: {
     /** Свойство transferFilter будет внутри

@@ -12,7 +12,6 @@
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-  grid-area: show-tickets-btn;
   &:hover {
     background-color: #71b3e8;
     border-color: #71b3e8;
@@ -21,10 +20,11 @@
   }
   &:focus,
   &:active {
-    background-color: #71b3e8;
-    border-color: #71b3e8;
+    background-color: #1f77be;
+    border-color: #1f77be;
     cursor: pointer;
-    outline: 2px solid #800000;
+    outline: 2px solid #71b3e8;
+    outline-offset: 4px;
   }
 
   @media (max-width: 991px) {

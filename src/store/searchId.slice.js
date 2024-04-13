@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import fetchSearchId from '../middlewares/fetchSearchId';
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
 const searchIdSlice = createSlice({
   name: 'searchId',
   initialState,
+
   reducers: {},
 
   extraReducers: (builder) => {

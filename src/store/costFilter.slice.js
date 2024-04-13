@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isFocusCheapestBtn: false,
-  isFocusFastestBtn: false,
+  isFocusFastestBtn: true,
   isFocusOptimalBtn: false,
 };
 
